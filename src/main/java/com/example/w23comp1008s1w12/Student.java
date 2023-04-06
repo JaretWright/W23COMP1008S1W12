@@ -1,6 +1,7 @@
 package com.example.w23comp1008s1w12;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Student {
     private String name;
@@ -12,7 +13,6 @@ public class Student {
         this.studentNum = studentNum;
         this.birthday = birthday;
     }
-
     public String getName() {
         return name;
     }
@@ -35,5 +35,15 @@ public class Student {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public String toString()
+    {
+        return String.format("%d-%s",studentNum,name);
+    }
+
+    public int getAge()
+    {
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
 }
