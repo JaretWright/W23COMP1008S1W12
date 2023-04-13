@@ -13,6 +13,7 @@ public class Student {
         this.studentNum = studentNum;
         this.birthday = birthday;
     }
+
     public String getName() {
         return name;
     }
