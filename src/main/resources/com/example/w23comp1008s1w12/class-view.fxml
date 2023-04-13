@@ -1,23 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.w23comp1008s1w12.ClassViewController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.w23comp1008s1w12.ClassViewController">
    <children>
       <HBox alignment="CENTER" layoutX="28.0" layoutY="61.0" prefHeight="500.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ListView fx:id="listView" prefHeight="350.0" prefWidth="400.0" />
+            <ListView fx:id="listView" onMouseClicked="#showName" prefHeight="350.0" prefWidth="400.0" />
             <VBox spacing="20.0">
                <children>
                   <Label fx:id="nameLabel" minWidth="200.0" text="Name" />
                   <Label fx:id="stNumLabel" minWidth="200.0" text="Student Number" />
                   <Label fx:id="ageLabel" minWidth="200.0" text="Age" />
+                  <VBox id="addStudentVbox">
+                     <children>
+                        <GridPane prefHeight="209.0" prefWidth="401.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="118.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="243.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name" />
+                              <Label text="Student #" GridPane.rowIndex="1" />
+                              <Label text="Birthday" GridPane.rowIndex="2" />
+                              <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
+                              <TextField fx:id="studentNumTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onAction="#createStudent" text="Create Student" />
+                        <Label fx:id="msgLabel" text="Label" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
                </children>
             </VBox>
          </children>
