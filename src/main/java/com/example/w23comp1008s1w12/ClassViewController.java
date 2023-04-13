@@ -76,8 +76,15 @@ public class ClassViewController implements Initializable {
         int studentNum = Integer.parseInt(studentNumTextField.getText());
         LocalDate birthday = datePicker.getValue();
 
-        Student newStudent= new Student(name, studentNum,birthday);
-        listView.getItems().add(newStudent);
+        try{
+            Student newStudent= new Student(name, studentNum,birthday);
+            listView.getItems().add(newStudent);
+            msgLabel.setText("Successfully added student");
+        } catch (IllegalArgumentException e)
+        {
+            msgLabel.setText(e.getMessage());
+        }
+
     }
     @FXML
     void showName(MouseEvent event) {

@@ -11,7 +11,7 @@ public class Student {
     public Student(String name, int studentNum, LocalDate birthday) {
         this.name = name;
         this.studentNum = studentNum;
-        this.birthday = birthday;
+        setBirthday(birthday);
     }
 
     public String getName() {
@@ -36,7 +36,7 @@ public class Student {
 
     public void setBirthday(LocalDate birthday) {
         if (birthday.isAfter(LocalDate.now()))
-            throw new IllegalArgumentException("birthday can be in the future");
+            throw new IllegalArgumentException("birthday can't be in the future");
         this.birthday = birthday;
     }
 
