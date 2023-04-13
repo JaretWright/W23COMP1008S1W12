@@ -34,6 +34,8 @@ public class Student {
     }
 
     public void setBirthday(LocalDate birthday) {
+        if (birthday.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("birthday can be in the future");
         this.birthday = birthday;
     }
 

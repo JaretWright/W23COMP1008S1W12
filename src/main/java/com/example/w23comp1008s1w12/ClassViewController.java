@@ -47,5 +47,8 @@ public class ClassViewController implements Initializable {
             stNumLabel.setText("St #:"+studentSelected.getStudentNum());
             ageLabel.setText("Age: " + studentSelected.getAge()+ " years");
         });
+
+
+
     }
 }
