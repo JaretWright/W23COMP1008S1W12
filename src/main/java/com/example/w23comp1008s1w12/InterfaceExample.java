@@ -15,6 +15,9 @@ public class InterfaceExample {
         shapes.add(rectangle1);
 
         for (TwoDimensionalShape shape : shapes)
+        {
             System.out.println("Area = " + shape.getArea());
+            System.out.println("Perimeter= "+ shape.getPerimeter());
+        }
     }
 }

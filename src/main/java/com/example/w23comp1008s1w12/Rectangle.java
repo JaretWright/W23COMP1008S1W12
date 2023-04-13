@@ -27,4 +27,9 @@ public class Rectangle implements TwoDimensionalShape{
     public double getArea() {
         return height * width;
     }
+
+    @Override
+    public double getPerimeter() {
+        return 2*height + 2*width;
+    }
 }
